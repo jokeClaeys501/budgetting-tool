@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Waiting...</title>
+</head>
+<body>
+    <p>test</p>
+    <script src="oidc-client.min.js"></script>
+    <script>
+ //import UserManager from "../node_modules/oidc-client/src/UserManager"
+        var mgr = new Oidc.UserManager({ response_mode: 'query', userStore: new Oidc.WebStorageStateStore(), client_secret:'secret' });
+        mgr.signinRedirectCallback().then(function (user) {
+            console.log("signin response success", user);
+            window.location.href = '../';
+        }).catch(function (err) {
+            console.log(err);
+            });
+ 
+    </script> 
+</body>
+</html>
