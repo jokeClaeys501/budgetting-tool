@@ -29,10 +29,10 @@ export default class AuthService {
         this.userManager = new UserManager(settings);
     }
 
-    public getUser(): Promise<User> {
-        console.log('getuser usermanager: '+this.userManager.getUser());
-        return this.userManager.getUser();
-    }
+    //public getUser(): Promise<User> {
+    //    console.log('getuser usermanager: '+this.userManager.getUser());
+    //    return this.userManager.getUser();
+    //}
 
     public login(): Promise<void> {
         console.log('login in authservicets')

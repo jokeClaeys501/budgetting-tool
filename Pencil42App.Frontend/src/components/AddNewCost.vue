@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import { Translator } from '../services/Translator';
+//import { Translator } from '../services/Translator';
 // import { currentWeekNumber } from 'current-week-number';
 // npm i --save current-week-number
 
