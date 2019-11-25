@@ -11,12 +11,15 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import vuetify from './plugins/vuetify';
-//import VueResource from 'vue-resource';
+import VueResource from 'vue-resource';
 import fetchIntercept from 'fetch-intercept';
 //import {access_token} from './views/Home.vue';
 import Home from './views/Home.vue';
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-//Vue.use(VueResource);
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 //var access_token=Home.access_token();
