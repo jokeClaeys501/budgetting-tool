@@ -1,3 +1,9 @@
+<template>
+  
+<b-button @click="getUser">Button</b-button>
+
+</template>
+
 <script>
 import { Line } from 'vue-chartjs';
 
@@ -42,4 +48,9 @@ export default {
     this.renderChart(this.chartdata, this.options);
   },
 };
+
+
+import axios from 'axios';
+
+
 </script>
