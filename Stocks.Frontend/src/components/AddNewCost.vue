@@ -8,16 +8,13 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import axios from 'axios';
-axios.defaults.baseURL = 'https://localhost:5001/api/TodoItems/';
+axios.defaults.baseURL = 'https://localhost:5001/';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
  
 
 @Component
 export default class AddNewCost extends Vue {
- 
-    
-
-
     created() {
         
         }
@@ -27,7 +24,7 @@ export default class AddNewCost extends Vue {
     }
 
     public testmethod() {
-        axios.get('/', {
+        axios.get('/api/TodoItems/', {
         params: {
         }
         })

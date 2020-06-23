@@ -1,12 +1,12 @@
 <template>
   <div class="small">
-    <line-chart :chart-data="datacollection"></line-chart>
+    <Linechart :chart-data="datacollection"></Linechart>
     <button @click="fillData()">Randomize</button>
   </div>
 </template>
 
-<script>
-  import LineChart from '../js-files/LineChart.js'
+<script> //javascript
+  import { LineChart } from 'vue-chartjs'
 
   export default {
     components: {
@@ -43,10 +43,3 @@
     }
   }
 </script>
-
-<style>
-  .small {
-    max-width: 600px;
-    margin:  150px auto;
-  }
-</style>
