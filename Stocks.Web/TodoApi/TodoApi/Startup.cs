@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using TodoApi.Models;
 
 namespace TodoApi
@@ -37,7 +38,15 @@ namespace TodoApi
 
             services.AddDbContext<TodoContext>(opt =>
                 opt.UseInMemoryDatabase("TodoList"));
-            services.AddControllers();
+
+            services.AddDbContext<StockPurchaseContext>(options => 
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            /*services.AddDbContext<StockPurchaseContext>(options =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")); //, options => options.EnableRetryOnFailure());
+                });
+            */
+        services.AddControllers();
 
         }
 
