@@ -12,6 +12,8 @@
       <router-link to="/overview">
         <h2><span class="mr-2">Week overview</span></h2>
       </router-link>
+
+
   </v-navigation-drawer>
 
     <v-content>

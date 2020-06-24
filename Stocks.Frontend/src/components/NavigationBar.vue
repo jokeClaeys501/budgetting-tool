@@ -9,6 +9,8 @@
       <b-navbar-nav>
         <b-nav-item to="/new-cost">Overview</b-nav-item>
         <b-nav-item href="#" >Expenses</b-nav-item>
+        <b-nav-item href="/tutorials" >Tutorials</b-nav-item>
+        <b-nav-item href="/add" >Add tutorial</b-nav-item>
         <b-nav-item href="#" >Investments</b-nav-item>
       </b-navbar-nav>
 

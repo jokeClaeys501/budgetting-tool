@@ -5,6 +5,8 @@
 </template>
 
 <script lang="ts">
+import TodoItemsDataService from "../services/TodoItemsDataService";
+import axios from 'axios';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
@@ -12,20 +14,22 @@ export default class AddNewCost extends Vue {
 
   public items: Person[] = [];
 
-  created(){
-    let list: Person[] = [
-            { age: 40, first_name: 'Jane', last_name: 'Macdonald' },
-            { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-            { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-            { age: 38, first_name: 'Jami', last_name: 'Carney' }
-          ];
-    this.items = list;
+  public async created(){
+    TodoItemsDataService.getAll()
+      .then((response) => {
+        this.items = response.data as Person[];
+        console.log(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }
 }
 
-export class Person {
+export interface Person {
   age: number;
   first_name: string;
   last_name: string;
 }
+
 </script>
