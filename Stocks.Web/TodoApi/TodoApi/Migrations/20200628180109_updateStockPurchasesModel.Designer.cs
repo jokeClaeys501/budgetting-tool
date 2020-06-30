@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TodoApi.Models;
@@ -9,9 +10,10 @@ using TodoApi.Models;
 namespace TodoApi.Migrations
 {
     [DbContext(typeof(StockPurchaseContext))]
-    partial class StockPurchaseContextModelSnapshot : ModelSnapshot
+    [Migration("20200628180109_updateStockPurchasesModel")]
+    partial class updateStockPurchasesModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,8 +28,8 @@ namespace TodoApi.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("integer");
+                    b.Property<double>("Amount")
+                        .HasColumnType("double precision");
 
                     b.Property<string>("BuyOrSell")
                         .IsRequired()
@@ -37,8 +39,8 @@ namespace TodoApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<double>("PricePerShare")
-                        .HasColumnType("double precision");
+                    b.Property<int>("PricePerShare")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("PurchaseDate")
                         .HasColumnType("timestamp without time zone");

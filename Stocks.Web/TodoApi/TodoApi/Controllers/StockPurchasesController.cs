@@ -42,7 +42,7 @@ namespace TodoApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTodoItem(int id, StockPurchase updatedStockPurchase)
+        public async Task<IActionResult> UpdateStockPurchase(int id, StockPurchase updatedStockPurchase)
         {
             if (id != updatedStockPurchase.Id)
             {
@@ -56,8 +56,11 @@ namespace TodoApi.Controllers
             }
 
             stockPurchaseFromDB.Tracker = updatedStockPurchase.Tracker;
+            stockPurchaseFromDB.PricePerShare = updatedStockPurchase.PricePerShare;
             stockPurchaseFromDB.Amount = updatedStockPurchase.Amount;
-            stockPurchaseFromDB.Value = updatedStockPurchase.Value;
+            stockPurchaseFromDB.LongOrShort = updatedStockPurchase.LongOrShort;
+            stockPurchaseFromDB.BuyOrSell = updatedStockPurchase.BuyOrSell;
+            stockPurchaseFromDB.PurchaseDate = updatedStockPurchase.PurchaseDate;
 
             try
             {
@@ -72,9 +75,10 @@ namespace TodoApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<StockPurchase>> CreateTodoItem(StockPurchase stockPurchase)
+        public async Task<ActionResult<StockPurchase>> CreateStockPurchase(StockPurchase stockPurchase)
         {
-
+            Console.WriteLine("Testline");
+            Console.WriteLine(stockPurchase);
             _context.StockPurchases.Add(stockPurchase);
             await _context.SaveChangesAsync();
 
@@ -85,7 +89,7 @@ namespace TodoApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTodoItem(int id)
+        public async Task<IActionResult> DeleteStockPurchase(int id)
         {
             var stockPurchasesToRemove = await _context.StockPurchases.FindAsync(id);
 
