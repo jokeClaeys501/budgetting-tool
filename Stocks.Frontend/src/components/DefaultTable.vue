@@ -92,7 +92,7 @@ import axios from 'axios';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
-export default class AddNewCost extends Vue {
+export default class DefaultTable extends Vue {
 
   public items: StockPurchase[] = [];
 

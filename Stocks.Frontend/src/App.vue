@@ -4,25 +4,12 @@
   <v-app>
 
 
-    <v-navigation-drawer app v-model="showMenu" right>
-      <router-link to="/new-cost" >
-        <h2><span class="mr-2">Add new cost</span></h2>
-      </router-link>
-
-      <router-link to="/overview">
-        <h2><span class="mr-2">Week overview</span></h2>
-      </router-link>
-
-
-  </v-navigation-drawer>
-
     <v-content>
 
       <router-view/>
     </v-content>
 
   </v-app>
-<Navbar />
 </div>
 </template>
 

@@ -1,17 +1,17 @@
 <template>
 <div>
-  <h1> Add new cost </h1>
-<AddNewCost />
+  <h1> Add stock purchase </h1>
+<AddStockPurchase />
 </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import AddNewCost from '../components/AddNewCost.vue';
+import AddStockPurchase from '../components/AddStockPurchase.vue';
 
 export default Vue.extend({
   components: {
-    AddNewCost
+    AddStockPurchase
   },
 });
 </script>

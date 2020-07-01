@@ -1,14 +1,19 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+
 import Home from './views/Home.vue';
-import AddNewCostView from './views/AddNewCost.vue';
+import AddStockPurchase from './views/AddStockPurchase.vue';
 
 Vue.use(Router);
 
 let router = new Router({
   routes: [
-    {
+    { 
       path: '/',
+      redirect: '/home'
+    },
+    {
+      path: '/home',
       name: 'home',
       component: Home,
       meta: {
@@ -16,10 +21,10 @@ let router = new Router({
       },
     },
     {
-      path:'/new-cost',
-      name:'new-cost',
-      component: AddNewCostView
-    },    
+      path:'/add-stock-purchase',
+      name:'AddStockPurchase',
+      component: AddStockPurchase
+    },   
   ],
 });
 

@@ -14,7 +14,7 @@ axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
  
 
 @Component
-export default class AddNewCost extends Vue {
+export default class AddStockPurchase extends Vue {
     created() {
         
         }
